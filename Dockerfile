@@ -1,10 +1,9 @@
-FROM node:10.13
+FROM node:8.15.1
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
-RUN npm install
+#COPY package*.json ./
 
 COPY . .
 
-CMD [ "npm", "start" ]
+RUN npm config set registry https://registry.npm.taobao.org/
